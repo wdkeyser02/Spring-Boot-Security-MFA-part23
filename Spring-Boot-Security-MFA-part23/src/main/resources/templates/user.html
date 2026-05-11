@@ -11,8 +11,6 @@
 	<p style="text-align: center;">Username: 
 		<span sec:authentication="name" th:text=${#strings.toUpperCase(#authentication.name)}>Anonymous</span>
 	</p>
-	<p style="text-align: center;">Name: <span th:text="${user.name}">Anonymous</span></p>
-	<p style="text-align: center;">E-mail: <span th:text="${user.email}">Anonymous</span></p>
 	<p style="text-align: center;">
 		<span th:if="${user.roles.size()>1}">Roles: </span>
 		<span th:unless="${user.roles.size()>1}">Role: </span>
