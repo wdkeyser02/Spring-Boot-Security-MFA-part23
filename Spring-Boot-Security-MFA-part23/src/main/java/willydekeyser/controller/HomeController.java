@@ -1,13 +1,10 @@
 package willydekeyser.controller;
 
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.ui.Model;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@Controller
 public class HomeController {
 	
 	@GetMapping("/")
@@ -22,15 +19,13 @@ public class HomeController {
 
     @GetMapping("/user")
     @PreAuthorize("hasRole('ROLE_USER')")
-    public String private_page_user(Model model, @AuthenticationPrincipal User user) {
-        model.addAttribute("user", user);
+    public String private_page_user() {
     	return "user";
     }
 
     @GetMapping("/admin")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
-    public String private_page_admin(Model model, @AuthenticationPrincipal User user) {
-    	model.addAttribute("user", user);
+    public String private_page_admin() {
     	return "admin";
     }
 }
