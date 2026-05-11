@@ -28,4 +28,9 @@ public class HomeController {
     public String private_page_admin() {
     	return "admin";
     }
+    
+    @GetMapping("/ott/sent")
+    String ottSent() {
+        return "ott-template";
+    }
 }
