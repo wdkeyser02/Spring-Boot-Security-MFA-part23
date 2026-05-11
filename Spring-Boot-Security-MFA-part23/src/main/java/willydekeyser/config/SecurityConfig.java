@@ -52,4 +52,14 @@ public class SecurityConfig {
         return new BCryptPasswordEncoder();
     }
     
+    //@Bean
+    //AuthorizationManagerFactory<Object> authz() {
+    //	return AuthorizationManagerFactories.multiFactor()
+    //		.requireFactors(
+    //			FactorGrantedAuthority.PASSWORD_AUTHORITY,
+    //			FactorGrantedAuthority.OTT_AUTHORITY
+    //		)
+    //		.build();
+    //}
+    
 }
